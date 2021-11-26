@@ -4,8 +4,8 @@ pub mod csv;
 use pyo3::prelude::*;
 
 #[pyfunction]
-fn deliver_ir() -> PyResult<spectrum2d::Spec2d>{
-    Ok(csv::load_ir())
+fn deliver_ir(file_path: String) -> PyResult<spectrum2d::Spec2d>{
+    Ok(csv::load_ir(file_path))
 }
 
 #[pymodule]

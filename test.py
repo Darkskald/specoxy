@@ -3,7 +3,7 @@ import specoxy
 import matplotlib.pyplot as plt
 import matplotlib
 
-spectrum = specoxy.deliver_ir()
+spectrum = specoxy.deliver_ir("/home/flo/data/linux_data/rust_development/specoxy/BX12.dpt")
 
 plt.plot(spectrum.x, spectrum.y)
 plt.xlabel(spectrum.x_label)

@@ -10,8 +10,9 @@ struct IrRecord {
     intensity: f64,
 }
 
-pub fn load_ir() -> spectrum2d::Spec2d {
-    let spec_path = "/home/flo/data/linux_data/rust_development/specoxy/BX12.dpt";
+pub fn load_ir(file_path: String) -> spectrum2d::Spec2d {
+    let spec_path = file_path;
+    // todo graceful error handling
     let file = File::open(spec_path).unwrap();
 
     let mut rdr = csv::ReaderBuilder::new()
